@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/gradient_backgr">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/title_results"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10sp">
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/subtitle_results"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="2sp"
+            android:layout_marginBottom="10dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="15sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/result_time"
+                android:textColor="#000"/>
+            <EditText
+                android:id="@+id/resultTime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/result_Log"
+                android:textColor="#000"/>
+            <EditText
+                android:id="@+id/resultLog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/result_mail"
+                android:textColor="#000"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/result_one_mail"/>
+            </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <Button
+                android:id="@+id/buttonMail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/result_btnMail"
+                android:onClick="onclickSendMail"
+                android:textColor="#fff"
+                android:background="@drawable/button_default_style"
+                android:layout_alignRight="@+id/buttonNewGame"
+                android:layout_alignEnd="@+id/buttonNewGame"
+                android:layout_alignLeft="@+id/buttonNewGame"
+                android:layout_alignStart="@+id/buttonNewGame"/>
+
+            <Button
+                android:layout_margin="4sp"
+                android:id="@+id/buttonNewGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/result_btnNewGame"
+                android:onClick="onclickNewGame"
+                android:textColor="#fff"
+                android:background="@drawable/button_default_style"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/buttonMail"/>
+
+
+
+
+            <Button
+                android:id="@+id/buttonExit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/result_btnExit"
+                android:onClick="onclickExit"
+                android:textColor="#fff"
+                android:background="@drawable/button_default_style"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/buttonNewGame"
+                android:layout_alignRight="@+id/buttonNewGame"
+                android:layout_alignEnd="@+id/buttonNewGame"
+                android:layout_alignLeft="@+id/buttonNewGame"
+                android:layout_alignStart="@+id/buttonNewGame"/>
+
+            </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

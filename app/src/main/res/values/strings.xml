@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">BuscaMinas</string>
+    <string name="bt_help">Ayuda</string>
+    <string name="bt_start">Empezar a jugar</string>
+    <string name="bt_exit">Salir</string>
+    <string name="settings">Configuración</string>
+    <string name="help_instr">El juego consiste en despejar todas las casillas de una pantalla que no oculten una mina.
+Algunas casillas tienen un número, este número indica las minas que suman todas las casillas circundantes. Así, si una casilla tiene el número 3, significa que de las ocho casillas que hay alrededor (si no es en una esquina o borde) hay 3 con minas y 5 sin minas. Si se descubre una casilla sin número indica que ninguna de las casillas vecinas tiene mina y estas se descubren automáticamente.
+Si se descubre una casilla con una mina se pierde la partida.
+Se puede poner una marca en las casillas que el jugador piensa que hay minas para ayudar a descubrir la que están cerca.</string>
+    <string name="help_return">Volver al menú</string>
+    <string name="title_main">PRINCIPAL</string>
+    <string name="title_help">AYUDA</string>
+    <string name="title_game">JUEGO</string>
+    <string name="title_config">CONFIGURACIÓN</string>
+    <string name="title_sendmail">ENVIAR CORREO</string>
+    <string name="title_results">RESULTADOS</string>
+    <string name="numberofmines">Numero de minas: %d </string>
+    <string name="timerName">Tiempo: </string>
+    <string name="alias_player">Alias Identificativo</string>
+    <string name="parrilla">Tamaño de parrilla</string>
+    <string name="time_control">Control de tiempo</string>
+    <string name="time_checkbox">Tiempo (segundos)</string>
+    <string name="Mines_porc">%Minas</string>
+    <string name="bt_startgame">Empezar</string>
+    <string name="subtitle_results">RESULTADOS DE PARTIDA</string>
+    <string name="subtitle_help">Bienvenido al juego del BUSCAMINAS!</string>
+    <string name="result_time">Día y hora</string>
+    <string name="result_Log">Valores del Log</string>
+    <string name="result_mail">E-mail del destinatario</string>
+    <string name="result_one_mail" translatable="false">xmf1@alumnes.udl.cat</string>
+    <string name="result_btnMail">Enviar e-mail</string>
+    <string name="result_btnNewGame">Nueva Partida</string>
+    <string name="result_btnExit">Salir</string>
+    <string name="result_et1">Jugador1</string>
+    <string name="sentenceWhenTimeout" formatted = "false">Has agotado el tiempo. Te han quedado %d casillas por descubrir, de las cuales %d eran bombas</string>
+    <string name="sentenceWhenLose" formatted = "false">Has perdido. Te han quedado %d casillas por descubrir, de las cuales %d eran bombas (como la que te ha explotado)</string>
+    <string name="sentenceWhenWinWithOUTTimer">HAS GANADO!</string>
+    <string name="sentenceWhenWinWithTimer" formatted = "false">Has ganado! Te han sobrado %d segundos</string>
+    <string name="str_boxes">Casillas: </string>
+    <string name="str_mines">Minas: </string>
+    <string name="str_trTime"> Tiempo transcurrido: </string>
+    <string name="str_seconds">segundos.</string>
+
+</resources>

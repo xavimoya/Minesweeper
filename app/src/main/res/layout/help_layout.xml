@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/gradient_backgr">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/title_help"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="#FFFFFFFF"
+        >
+        <TextView
+            android:gravity="center_horizontal"
+            android:id="@+id/helptitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/subtitle_help"
+            android:textColor="#000000"
+            android:textSize="19sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"
+        android:layout_margin="10dp">
+        <TextView
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/help_instr"/>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/returnGame"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColorHint="#00FF99"
+            android:textColor="#FFFFFF"
+            android:text="@string/help_return"
+            android:background="@drawable/button_default_style"
+            />
+
+        </LinearLayout>
+</LinearLayout>
