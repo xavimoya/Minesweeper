@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/build/intermediates/res/merged/debug/menu/menu_minessweeper.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/src/main/res/menu/menu_minessweeper.xml"
+    },
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/menu/menu_minessweeper.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/res/menu/menu_minessweeper.xml"
+    }
+]

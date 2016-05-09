@@ -6,9 +6,13 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.os.SystemClock;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
@@ -36,6 +40,7 @@ public class game extends Activity {
     long timeInMilliseconds = 0L;
     int numberOfMines = 0;
     private boolean firstClick = true;
+    DataBuilder dataBuilder;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -44,11 +49,15 @@ public class game extends Activity {
         Bundle bundle = getIntent().getExtras();
        // int columns = bundle.getInt("num_Casillas");
         //numCols = columns;
-        numCols = bundle.getInt("num_Casillas");
+        dataBuilder = bundle.getParcelable(getString(R.string.extraData));
+        numCols = dataBuilder.getNumOfColumns();
+        //numCols = bundle.getInt("num_Casillas");
         //boolean haveTimer = bundle.getBoolean("time");
         //time = haveTimer;
-        time = bundle.getBoolean("time");
-        String bundleStr = bundle.getString("percentage");
+        time = dataBuilder.getHasTime();
+        //time = bundle.getBoolean("time");
+        //String bundleStr = bundle.getString("percentage");
+        String bundleStr = dataBuilder.getPercentage();
         if (bundleStr != null) {
             switch (bundleStr) {
                 case "%15":
@@ -72,7 +81,8 @@ public class game extends Activity {
         TextView tv = (TextView)findViewById(R.id.numberOfMines);
         tv.setText(String.format(getString(R.string.numberofmines),numberOfMines));
         if(time){
-            timeout = bundle.getInt("timevalue");
+            //timeout = bundle.getInt("timevalue");
+            timeout = dataBuilder.getSeconds();
             tm = (TextView)findViewById(R.id.timer);
             startTime = SystemClock.uptimeMillis();
             cusHandler.postDelayed(updateTimerThread,0);
@@ -138,8 +148,11 @@ public class game extends Activity {
                 data.setData(Uri.parse("TIMEOUT"));
                 String text = String.format(getString(R.string.sentenceWhenTimeout),numClosedBoxes(), numberOfMines);
                 //String text = getString(R.string.sentenceWhenTimeout) + numClosedBoxes() + numberOfMines;
-                data.putExtra("TEXT",text);
-                if(time) data.putExtra("TRANSCURRED",transcurred);
+                //data.putExtra("TEXT",text);
+                dataBuilder.setText(text);
+                if(time) dataBuilder.setTranscurredTime(transcurred); //data.putExtra("TRANSCURRED",transcurred);
+
+                data.putExtra(getString(R.string.extraData), (Parcelable) dataBuilder);
                 setResult(RESULT_OK,data);
                 finish(); //LOSE BECAUSE TIMEOUT
             }else if(!finished){
@@ -195,10 +208,16 @@ public class game extends Activity {
         public View getView(int position, View convertView, ViewGroup parent) {
             Button btn;
 
+
             if (convertView == null) {
                 btn = new Button(mContext);
-                btn.setLayoutParams(new GridView.LayoutParams(GridView.LayoutParams.MATCH_PARENT, GridView.LayoutParams.MATCH_PARENT));
-                btn.setPadding(8, 8, 8, 8);
+                //btn.setLayoutParams(new GridView.LayoutParams(GridView.LayoutParams.WRAP_CONTENT, GridView.LayoutParams.WRAP_CONTENT));
+                DisplayMetrics displaymetrics = new DisplayMetrics();
+                getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+                int width = displaymetrics.widthPixels;
+                double density = (width-10 )/ (dataBuilder.getNumOfColumns()+1);
+                btn.setLayoutParams(new GridView.LayoutParams((int)(density), (int)(density)));
+               // btn.setPadding(8, 8, 8, 8);
                 btn.setFocusable(false);
                 btn.setClickable(false);
             } else {
@@ -222,7 +241,13 @@ public class game extends Activity {
             }else{
                 btn.setText(String.valueOf(filenames[position]));
                 btn.setTextColor(Color.WHITE);
-                btn.setTextSize(20);//depen del tamany*****************************
+                if (dataBuilder.getNumOfColumns() > 8) {
+                    btn.setTextSize(11);
+                } else if (dataBuilder.getNumOfColumns() > 7) {
+                    btn.setTextSize(15);
+                } else {
+                    btn.setTextSize(20);
+                }
                 btn.setId(position);
                 btn.setBackgroundResource(R.drawable.color_buttonpressed);
                 btn.setOnClickListener(new ClickedListener(position));
@@ -260,8 +285,10 @@ public class game extends Activity {
                 Intent data = new Intent();
                 data.setData(Uri.parse("BOOM"));
                 String text = String.format(getString(R.string.sentenceWhenLose), numClosedBoxes(), numberOfMines);
-                if(time) data.putExtra("TRANSCURRED",transcurred);
-                data.putExtra("TEXT",text);
+                if(time) dataBuilder.setTranscurredTime(transcurred);// data.putExtra("TRANSCURRED",transcurred);
+                //data.putExtra("TEXT",text);
+                dataBuilder.setText(text);
+                data.putExtra(getString(R.string.extraData),(Parcelable)dataBuilder);
                 setResult(RESULT_OK,data);
                 finish(); //LOSE BECAUSE CLICKED BOMB
             }else if (filenames[position] == 0){ //first click in this button
@@ -273,12 +300,15 @@ public class game extends Activity {
                     data.setData(Uri.parse("WIN"));
                     String text;
                     if (time){
-                        data.putExtra("TRANSCURRED",transcurred);
+                        //data.putExtra("TRANSCURRED",transcurred);
+                        dataBuilder.setTranscurredTime(transcurred);
                         text = String.format(getString(R.string.sentenceWhenWinWithTimer),(timeout-transcurred));
                     }else{
                         text = getString(R.string.sentenceWhenWinWithOUTTimer);
                     }
-                    data.putExtra("TEXT",text);
+                    dataBuilder.setText(text);
+                    //data.putExtra("TEXT",text);
+                    data.putExtra(getString(R.string.extraData),(Parcelable)dataBuilder);
                     setResult(RESULT_OK,data);
                     finish(); //WIN
                 }

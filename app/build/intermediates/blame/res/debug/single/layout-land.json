@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/build/intermediates/res/merged/debug/layout-land/activity_minessweeper.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/src/main/res/layout-land/activity_minessweeper.xml"
+    },
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout-land/activity_minessweeper.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/res/layout-land/activity_minessweeper.xml"
+    },
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/build/intermediates/res/merged/debug/layout-land/help_layout.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/src/main/res/layout-land/help_layout.xml"
+    },
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout-land/game_layout.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/res/layout-land/game_layout.xml"
+    },
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout-land/help_layout.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/res/layout-land/help_layout.xml"
+    },
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/build/intermediates/res/merged/debug/layout-land/results_layout.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/src/main/res/layout-land/results_layout.xml"
+    },
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/build/intermediates/res/merged/debug/layout-land/config_layout.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/src/main/res/layout-land/config_layout.xml"
+    },
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/build/intermediates/res/merged/debug/layout-land/game_layout.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/src/main/res/layout-land/game_layout.xml"
+    },
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout-land/results_layout.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/res/layout-land/results_layout.xml"
+    },
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout-land/config_layout.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/res/layout-land/config_layout.xml"
+    }
+]

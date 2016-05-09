@@ -41,5 +41,7 @@ Se puede poner una marca en las casillas que el jugador piensa que hay minas par
     <string name="str_mines">Minas: </string>
     <string name="str_trTime"> Tiempo transcurrido: </string>
     <string name="str_seconds">segundos.</string>
+    <string name="textErrorColumn">Numero incorrecto de columnas (de 2 a 10)</string>
+    <string name="extraData" translatable="false">dataBuilder</string>
 
 </resources>

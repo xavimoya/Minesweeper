@@ -2,17 +2,22 @@ package xavi.minesweeper;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 /**
  * Created by xavi on 25/4/15.
  */
 public class config extends Activity {
+
+    DataBuilder dataBuilder = new DataBuilder();
     String alias = "";
     int columns = 5;
     boolean time = false;
@@ -38,27 +43,42 @@ public class config extends Activity {
         });
     }
     public void clickStartGame(View v){
-        Intent i = new Intent(config.this,game.class);
-        EditText et1 = (EditText) findViewById(R.id.editText);
         EditText et2 = (EditText) findViewById(R.id.editText_parrilla);
-        CheckBox cb = (CheckBox)findViewById(R.id.checkBox);
-        RadioGroup rb = (RadioGroup)findViewById(R.id.radiogroup);
-        alias = et1.getText().toString();
         columns = Integer.parseInt(et2.getText().toString());
-        i.putExtra("num_Casillas", columns);
-        if (cb.isChecked()){
-            time = true;
-            i.putExtra("time",true);
-            EditText et = (EditText)findViewById(R.id.textTime);
-            int value = Integer.parseInt(et.getText().toString());
-            i.putExtra("timevalue",value);
-        }else{
-            time = false;
-            i.putExtra("time",false);
+        if (columns < 2 || columns > 10){
+            TextView ct = (TextView)findViewById(R.id.configtext);
+            ct.setText(R.string.textErrorColumn);
+            ct.setTextColor(Color.RED);
+            ct.setTextSize(20);
+
+        }else {
+            Intent i = new Intent(config.this, game.class);
+            EditText et1 = (EditText) findViewById(R.id.editText);
+            CheckBox cb = (CheckBox) findViewById(R.id.checkBox);
+            RadioGroup rb = (RadioGroup) findViewById(R.id.radiogroup);
+            alias = et1.getText().toString();
+            columns = Integer.parseInt(et2.getText().toString());
+            dataBuilder.setNumOfColumns(columns);
+            //i.putExtra("num_Casillas", columns);
+            if (cb.isChecked()) {
+                time = true;
+                dataBuilder.setHasTime(true);
+                //i.putExtra("time", true);
+                EditText et = (EditText) findViewById(R.id.textTime);
+                int value = Integer.parseInt(et.getText().toString());
+                dataBuilder.setSeconds(value);
+                //i.putExtra("timevalue", value);
+            } else {
+                time = false;
+                dataBuilder.setHasTime(false);
+                //i.putExtra("time", false);
+            }
+            radiovalue = ((RadioButton) findViewById(rb.getCheckedRadioButtonId())).getText().toString();
+           // i.putExtra("percentage", radiovalue);
+            dataBuilder.setPercentage(radiovalue);
+            i.putExtra(getString(R.string.extraData), dataBuilder);
+            startActivityForResult(i, 123);
         }
-        radiovalue = ((RadioButton)findViewById(rb.getCheckedRadioButtonId() )).getText().toString();
-        i.putExtra("percentage",radiovalue);
-        startActivityForResult(i,123);
     }
 
     @Override
@@ -67,17 +87,24 @@ public class config extends Activity {
             if(resultCode == RESULT_OK){
                 String result = data.getData().toString();
                 Intent res = new Intent(this,results.class);
-                res.putExtra("ALIAS",alias);
+                /*res.putExtra("ALIAS",alias);
                 res.putExtra("COLS",columns);
                 res.putExtra("TIME",time);
-                res.putExtra("PERCENT",radiovalue);
+                res.putExtra("PERCENT",radiovalue);*/
+                dataBuilder.setAlias(alias);
                 Bundle b = data.getExtras();
-                String text = b.getString("TEXT");
-                res.putExtra("TEXT",text);
+                DataBuilder db = b.getParcelable(getString(R.string.extraData));
+                //String text = b.getString("TEXT");
+                String text = db.getText();
+                //res.putExtra("TEXT",text);
+                dataBuilder.setText(text);
                 if(time){
-                    int trans = b.getInt("TRANSCURRED");
-                    res.putExtra("TRANSCURRED",trans);
+                    dataBuilder.setTranscurredTime(db.getTranscurredTime());
+                    //int trans = b.getInt("TRANSCURRED");
+                    //res.putExtra("TRANSCURRED",trans);
+
                 }
+                res.putExtra(getString(R.string.extraData), dataBuilder);
                 switch(result){
                     case "WIN":
                         res.addFlags(res.FLAG_ACTIVITY_CLEAR_TOP);

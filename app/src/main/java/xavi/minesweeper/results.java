@@ -16,16 +16,23 @@ import static java.util.Calendar.*;
 public class results extends Activity {
     String totaltext;
     String subject;
+    DataBuilder dataBuilder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.results_layout);
         Bundle bundle = getIntent().getExtras();
-        String alias = bundle.getString("ALIAS");
+       /* String alias = bundle.getString("ALIAS");
         String percent = bundle.getString("PERCENT");
         boolean haveTime = bundle.getBoolean("TIME");
         int columns = bundle.getInt("COLS");
-        String text = bundle.getString("TEXT");
+        String text = bundle.getString("TEXT");*/
+        dataBuilder = bundle.getParcelable(getString(R.string.extraData));
+        String alias = dataBuilder.getAlias();
+        String percent = dataBuilder.getPercentage();
+        boolean haveTime = dataBuilder.getHasTime();
+        int columns = dataBuilder.getNumOfColumns();
+        String text = dataBuilder.getText();
 
         TextView time = (TextView) findViewById(R.id.resultTime);
         TextView log = (TextView) findViewById(R.id.resultLog);
@@ -36,7 +43,8 @@ public class results extends Activity {
         subject = "LOG - " +timeText;
         String logText = "Alias: "+ alias+ " "+ getString(R.string.str_boxes)+" "+(columns*columns)+" " + getString(R.string.str_mines)+" "+percent;
         if (haveTime){
-            int tr = bundle.getInt("TRANSCURRED");
+            //int tr = bundle.getInt("TRANSCURRED");
+            int tr = dataBuilder.getTranscurredTime();
             logText = logText + " "+getString(R.string.str_trTime) +" "+tr+ getString(R.string.str_seconds);
         }
         totaltext=logText +"\n" + text;

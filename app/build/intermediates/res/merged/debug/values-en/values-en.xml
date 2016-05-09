@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Mines_porc">%Mines</string>
+    <string name="alias_player">Alias Identifier</string>
+    <string name="app_name">Minesweeper</string>
+    <string name="bt_exit">Exit</string>
+    <string name="bt_help">Help</string>
+    <string name="bt_start">Start Game</string>
+    <string name="bt_startgame">Start</string>
+    <string name="help_instr">The game is to clear all the boxes on a screen that does not hide a mine. Some boxes have a number, this number indicates the mines totaling all the surrounding squares. Thus, if a box has the number 3 means that there are eight boxes around (if not on a corner or edge) mines are 3 to 5 without mines. If you discover a numbered box indicates that none of the neighboring squares has mine and these are automatically discovered. If a box with a mine is discovered the game is lost. You can put a mark on the boxes that the player thinks that there are mines to help discover which are nearby.</string>
+    <string name="help_return">Return to menu</string>
+    <string name="numberofmines">Number of mines: %d</string>
+    <string name="parrilla">Grid size</string>
+    <string name="result_Log">Log Values</string>
+    <string name="result_btnExit">Exit</string>
+    <string name="result_btnMail">Send email</string>
+    <string name="result_btnNewGame">New Game</string>
+    <string name="result_et1">Player1</string>
+    <string name="result_mail">Email of the recipient</string>
+    <string name="result_time">Day and hour</string>
+    <string formatted="false" name="sentenceWhenLose">You lost. They\'ve been %d of boxes to be discovered, of which %d were bombs (such as that exploited you)</string>
+    <string formatted="false" name="sentenceWhenTimeout">You have out of time. Have stayed %d of undiscovered boxes, of which %d were bombs</string>
+    <string name="sentenceWhenWinWithOUTTimer">YOU WIN!</string>
+    <string formatted="false" name="sentenceWhenWinWithTimer">You\'ve won! You have left over %d seconds</string>
+    <string name="settings">Configuration</string>
+    <string name="str_boxes">Boxes:</string>
+    <string name="str_mines">Mines:</string>
+    <string name="str_seconds">seconds.</string>
+    <string name="str_trTime">Transcurred time:</string>
+    <string name="subtitle_help">Welcome to MINESWEEPER game!</string>
+    <string name="subtitle_results">GAME RESULTS</string>
+    <string name="textErrorColumn">Bad number of columns (from 2 to 10)</string>
+    <string name="time_checkbox">Time (seconds)</string>
+    <string name="time_control">Timeout</string>
+    <string name="timerName">Time:</string>
+    <string name="title_config">CONFIGURATION</string>
+    <string name="title_game">GAME</string>
+    <string name="title_help">HELP</string>
+    <string name="title_main">MAIN</string>
+    <string name="title_results">RESULTS</string>
+    <string name="title_sendmail">SEND MAIL</string>
+</resources>

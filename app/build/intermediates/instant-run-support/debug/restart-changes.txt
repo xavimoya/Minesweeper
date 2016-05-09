@@ -1,0 +1,4 @@
+CHANGED,/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/xavi/minesweeper/game$1.class
+CHANGED,/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/xavi/minesweeper/game.class
+CHANGED,/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/xavi/minesweeper/game$ClickedListener.class
+CHANGED,/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/xavi/minesweeper/game$ButtonAdapter.class
