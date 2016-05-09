@@ -2,9 +2,5 @@
     {
         "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
         "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
-        "source": "/Users/Xavi/AndroidStudioProjects/Practica/Minesweeper/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     }
 ]

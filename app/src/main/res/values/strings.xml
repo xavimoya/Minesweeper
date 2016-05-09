@@ -33,10 +33,10 @@ Se puede poner una marca en las casillas que el jugador piensa que hay minas par
     <string name="result_btnNewGame">Nueva Partida</string>
     <string name="result_btnExit">Salir</string>
     <string name="result_et1">Jugador1</string>
-    <string name="sentenceWhenTimeout" formatted = "false">Has agotado el tiempo. Te han quedado %d casillas por descubrir, de las cuales %d eran bombas</string>
-    <string name="sentenceWhenLose" formatted = "false">Has perdido. Te han quedado %d casillas por descubrir, de las cuales %d eran bombas (como la que te ha explotado)</string>
+    <string name="sentenceWhenTimeout" formatted="false">Has agotado el tiempo. Te han quedado %d casillas por descubrir, de las cuales %d eran bombas</string>
+    <string name="sentenceWhenLose" formatted="false">Has perdido. Te han quedado %d casillas por descubrir, de las cuales %d eran bombas (como la que te ha explotado)</string>
     <string name="sentenceWhenWinWithOUTTimer">HAS GANADO!</string>
-    <string name="sentenceWhenWinWithTimer" formatted = "false">Has ganado! Te han sobrado %d segundos</string>
+    <string name="sentenceWhenWinWithTimer" formatted="false">Has ganado! Te han sobrado %d segundos</string>
     <string name="str_boxes">Casillas: </string>
     <string name="str_mines">Minas: </string>
     <string name="str_trTime"> Tiempo transcurrido: </string>

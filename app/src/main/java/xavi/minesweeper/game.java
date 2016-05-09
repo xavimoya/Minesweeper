@@ -45,7 +45,7 @@ public class game extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.game_layout);
+        setContentView(R.layout.frag_game_layout);
         Bundle bundle = getIntent().getExtras();
        // int columns = bundle.getInt("num_Casillas");
         //numCols = columns;
