@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment class="xavi.minesweeper.game"
+    <fragment class="xavi.minesweeper.Game"
         android:id="@+id/frag_game1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -8,11 +8,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.SystemClock;
+import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
-import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
@@ -24,7 +24,7 @@ import android.widget.TextView;
  * Created by xavi on 25/4/16.
  *
  */
-public class game extends Activity {
+public class Game extends FragmentActivity {
     //Toast toast;
     GridView gridview;
     int[] filenames;
@@ -45,11 +45,12 @@ public class game extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.frag_game_layout);
+        setContentView(R.layout.game_layout);
         Bundle bundle = getIntent().getExtras();
        // int columns = bundle.getInt("num_Casillas");
         //numCols = columns;
         dataBuilder = bundle.getParcelable(getString(R.string.extraData));
+        assert dataBuilder != null;
         numCols = dataBuilder.getNumOfColumns();
         //numCols = bundle.getInt("num_Casillas");
         //boolean haveTimer = bundle.getBoolean("time");
@@ -98,6 +99,8 @@ public class game extends Activity {
         gridview.setAdapter(new ButtonAdapter(this));
 
     }
+
+
 
     private void setInitialBoombs(int numBoxes){
         for(int i=0; i<numberOfMines; i++){
@@ -152,7 +155,7 @@ public class game extends Activity {
                 dataBuilder.setText(text);
                 if(time) dataBuilder.setTranscurredTime(transcurred); //data.putExtra("TRANSCURRED",transcurred);
 
-                data.putExtra(getString(R.string.extraData), (Parcelable) dataBuilder);
+                data.putExtra(getString(R.string.extraData),  dataBuilder);
                 setResult(RESULT_OK,data);
                 finish(); //LOSE BECAUSE TIMEOUT
             }else if(!finished){
@@ -212,10 +215,13 @@ public class game extends Activity {
             if (convertView == null) {
                 btn = new Button(mContext);
                 //btn.setLayoutParams(new GridView.LayoutParams(GridView.LayoutParams.WRAP_CONTENT, GridView.LayoutParams.WRAP_CONTENT));
-                DisplayMetrics displaymetrics = new DisplayMetrics();
+               /* DisplayMetrics displaymetrics = new DisplayMetrics();
                 getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-                int width = displaymetrics.widthPixels;
-                double density = (width-10 )/ (dataBuilder.getNumOfColumns()+1);
+                int width = displaymetrics.widthPixels;*/
+                View v = findViewById(R.id.idgrid);
+                int width = v.getWidth();
+                double density = (width - 10 )/ (dataBuilder.getNumOfColumns()+1);
+
                 btn.setLayoutParams(new GridView.LayoutParams((int)(density), (int)(density)));
                // btn.setPadding(8, 8, 8, 8);
                 btn.setFocusable(false);
@@ -288,7 +294,7 @@ public class game extends Activity {
                 if(time) dataBuilder.setTranscurredTime(transcurred);// data.putExtra("TRANSCURRED",transcurred);
                 //data.putExtra("TEXT",text);
                 dataBuilder.setText(text);
-                data.putExtra(getString(R.string.extraData),(Parcelable)dataBuilder);
+                data.putExtra(getString(R.string.extraData),dataBuilder);
                 setResult(RESULT_OK,data);
                 finish(); //LOSE BECAUSE CLICKED BOMB
             }else if (filenames[position] == 0){ //first click in this button
@@ -308,7 +314,7 @@ public class game extends Activity {
                     }
                     dataBuilder.setText(text);
                     //data.putExtra("TEXT",text);
-                    data.putExtra(getString(R.string.extraData),(Parcelable)dataBuilder);
+                    data.putExtra(getString(R.string.extraData),dataBuilder);
                     setResult(RESULT_OK,data);
                     finish(); //WIN
                 }

@@ -13,7 +13,7 @@ import static java.util.Calendar.*;
 /**
  * Created by xavi on 25/4/15.
  */
-public class results extends Activity {
+public class Results extends Activity {
     String totaltext;
     String subject;
     DataBuilder dataBuilder;

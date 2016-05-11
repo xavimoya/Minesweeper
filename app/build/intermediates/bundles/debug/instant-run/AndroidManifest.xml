@@ -26,14 +26,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="xavi.minesweeper.help" >
-        </activity>
-        <activity android:name="xavi.minesweeper.game" >
-        </activity>
-        <activity android:name="xavi.minesweeper.config" >
-        </activity>
-        <activity android:name="xavi.minesweeper.results" >
-        </activity>
+        <activity android:name="xavi.minesweeper.Help" />
+        <activity android:name="xavi.minesweeper.Game" />
+        <activity android:name="xavi.minesweeper.Config" />
+        <activity android:name="xavi.minesweeper.Results" />
+        <activity android:name="xavi.minesweeper.Log" />
+        <activity android:name="xavi.minesweeper.Frag_name" />
     </application>
 
 </manifest>

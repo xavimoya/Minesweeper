@@ -9,7 +9,7 @@ import android.widget.Button;
 /**
  * Created by xavi on 25/4/15.
  */
-public class help extends Activity{
+public class Help extends Activity{
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

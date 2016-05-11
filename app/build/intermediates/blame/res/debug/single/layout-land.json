@@ -4,6 +4,10 @@
         "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/res/layout-land/activity_minessweeper.xml"
     },
     {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout-land/frag_game_layout.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/res/layout-land/frag_game_layout.xml"
+    },
+    {
         "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout-land/game_layout.xml",
         "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/res/layout-land/game_layout.xml"
     },

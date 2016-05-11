@@ -41,16 +41,21 @@
             android:paddingRight="15dp"
             />
         </LinearLayout>
-    <GridView
-        android:padding="5sp"
-        android:background="#FFFFFF"
-        android:id="@+id/gridmines"
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:horizontalSpacing="4dp"
-        android:verticalSpacing="4dp"
-        android:stretchMode="columnWidth"
-        android:isScrollContainer="false"
-        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/idgrid">
+            <GridView
+                android:padding="5sp"
+                android:background="#FFFFFF"
+                android:id="@+id/gridmines"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="5dp"
+                android:verticalSpacing="5dp"
+                android:stretchMode="columnWidth"
+                android:isScrollContainer="false"
+                />
+        </LinearLayout>
 </LinearLayout>

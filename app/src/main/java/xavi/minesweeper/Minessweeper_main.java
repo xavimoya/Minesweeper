@@ -33,7 +33,7 @@ public class Minessweeper_main extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent i = new Intent(this,config.class);
+            Intent i = new Intent(this,Config.class);
             i.addFlags(i.FLAG_ACTIVITY_CLEAR_TOP);
             this.startActivity(i);
         }
@@ -41,13 +41,13 @@ public class Minessweeper_main extends ActionBarActivity {
     }
 
     public void clickHelp(View v){
-        Intent i = new Intent(Minessweeper_main.this,help.class);
+        Intent i = new Intent(Minessweeper_main.this,Help.class);
         i.addFlags(i.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }
 
     public void clickStart(View v){
-        Intent i = new Intent(Minessweeper_main.this,config.class);
+        Intent i = new Intent(Minessweeper_main.this,Config.class);
         i.addFlags(i.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }

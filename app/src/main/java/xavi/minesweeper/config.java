@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -15,7 +14,7 @@ import android.widget.TextView;
 /**
  * Created by xavi on 25/4/15.
  */
-public class config extends Activity {
+public class Config extends Activity {
 
     DataBuilder dataBuilder = new DataBuilder();
     String alias = "";
@@ -52,7 +51,7 @@ public class config extends Activity {
             ct.setTextSize(20);
 
         }else {
-            Intent i = new Intent(config.this, game.class);
+            Intent i = new Intent(Config.this, Game.class);
             EditText et1 = (EditText) findViewById(R.id.editText);
             CheckBox cb = (CheckBox) findViewById(R.id.checkBox);
             RadioGroup rb = (RadioGroup) findViewById(R.id.radiogroup);
@@ -86,7 +85,7 @@ public class config extends Activity {
         if(requestCode == 123){
             if(resultCode == RESULT_OK){
                 String result = data.getData().toString();
-                Intent res = new Intent(this,results.class);
+                Intent res = new Intent(this,Results.class);
                 /*res.putExtra("ALIAS",alias);
                 res.putExtra("COLS",columns);
                 res.putExtra("TIME",time);
