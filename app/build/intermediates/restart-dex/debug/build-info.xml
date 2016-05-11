@@ -2,82 +2,49 @@
 <instant-run
     abi="x86"
     api-level="23"
-    density="xhdpi"
+    density="xxhdpi"
     format="7"
-    timestamp="76043362539967"
+    timestamp="2676376607937"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="116" />
+        duration="94" />
     <task
         name="instant-run-dex"
-        duration="360" />
+        duration="502" />
     <task
         name="instant-run-transform"
-        duration="4" />
+        duration="14" />
     <task
         name="verifier"
-        duration="1" />
+        duration="2" />
 
     <artifact
         location="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/reload-dex/debug/classes.dex"
         type="RELOAD_DEX" />
 
-    <build timestamp="74959198521531" >
+    <build timestamp="2487095408988" >
         <artifact
             location="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="75703405992413"
-        verifier="R_CLASS_CHANGE" >
-        <artifact
-            location="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="75775595219137"
+        timestamp="2627837356971"
         verifier="COMPATIBLE" >
         <artifact
-            location="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/builds/debug/75775595219137/classes.dex"
+            location="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/builds/debug/2627837356971/classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="75803336164522"
+        timestamp="2650885883631"
         verifier="COMPATIBLE" >
         <artifact
-            location="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/builds/debug/75803336164522/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build timestamp="75836075219917" >
-        <artifact
-            location="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/resources-debug.ap_"
-            type="RESOURCES" />
-    </build>
-    <build
-        timestamp="75856706130494"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/builds/debug/75856706130494/classes.dex"
+            location="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/builds/debug/2650885883631/classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="75866231684881"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/builds/debug/75866231684881/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="75979365886291"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/builds/debug/75979365886291/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="76043362539967"
+        timestamp="2676376607937"
         verifier="COMPATIBLE" >
         <artifact
             location="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/reload-dex/debug/classes.dex"

@@ -208,7 +208,7 @@ public class Game extends FragmentActivity {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             Button btn;
 
 
@@ -220,7 +220,7 @@ public class Game extends FragmentActivity {
                 int width = displaymetrics.widthPixels;*/
                 View v = findViewById(R.id.idgrid);
                 int width = v.getWidth();
-                double density = (width - 10 )/ (dataBuilder.getNumOfColumns()+1);
+                double density = (width - 10)/ (dataBuilder.getNumOfColumns()+1);
 
                 btn.setLayoutParams(new GridView.LayoutParams((int)(density), (int)(density)));
                // btn.setPadding(8, 8, 8, 8);
@@ -233,6 +233,7 @@ public class Game extends FragmentActivity {
                 btn.setId(position);
                 btn.setBackgroundResource(R.drawable.color_buttons);
                 btn.setOnClickListener(new ClickedListener(position));
+                btn.setOnLongClickListener(new LongClickedListener(position));
                 return btn;
             } else if (filenames[position] == -2) {
                 btn.setId(position);
@@ -243,6 +244,12 @@ public class Game extends FragmentActivity {
                 btn.setId(position);
                 btn.setBackgroundColor(Color.RED);
                 btn.setOnClickListener(new ClickedListener(position));
+                return btn;
+            }else if(filenames[position] == -10 || filenames[position] == -11){
+                btn.setId(position);
+                btn.setBackgroundColor(Color.CYAN);
+                btn.setOnClickListener(new ClickedListener(position));
+                btn.setOnLongClickListener(new LongClickedListener(position));
                 return btn;
             }else{
                 btn.setText(String.valueOf(filenames[position]));
@@ -267,6 +274,37 @@ public class Game extends FragmentActivity {
             if (i == 0) return false;
         }
         return true;
+    }
+
+    public class LongClickedListener implements View.OnLongClickListener{
+
+        private final int position;
+        public LongClickedListener(int p){
+            this.position = p;
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+
+            if (filenames[position] == 0) filenames[position] = -10; //flag to void cell
+            else if(filenames[position] == -10) filenames[position] = 0;
+            else if(filenames[position] == -1) filenames[position] = -11; //flag over the bomb
+            else if(filenames[position] == -11) filenames[position] = -1;
+
+            if(filenames[position] == -10 || filenames[position] == -11) { //values of a flag
+                Button btn = (Button) v;
+                btn.setBackgroundColor(Color.CYAN);
+                btn.setId(position);
+                return true;
+            }else{
+                Button btn = (Button) v;
+                btn.setBackgroundResource(R.drawable.color_buttons);
+                btn.setId(position);
+                btn.setFocusable(false);
+                btn.setClickable(false);
+            }
+            return false;
+        }
     }
 
     public class ClickedListener implements View.OnClickListener {

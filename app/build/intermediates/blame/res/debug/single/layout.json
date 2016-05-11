@@ -20,12 +20,12 @@
         "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
-        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_action_bar_title_item.xml"
-    },
-    {
         "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
         "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_action_bar_title_item.xml"
     },
     {
         "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
@@ -136,16 +136,16 @@
         "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
-        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_screen_toolbar.xml"
+        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/notification_media_action.xml"
     },
     {
         "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout/help_layout.xml",
         "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/res/layout/help_layout.xml"
     },
     {
-        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
-        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/notification_media_action.xml"
+        "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
+        "source": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_screen_toolbar.xml"
     },
     {
         "merged": "/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
