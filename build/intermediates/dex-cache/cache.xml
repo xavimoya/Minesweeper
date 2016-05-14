@@ -1,2 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.3.0_1f5a273a3d76d862d03f3e7fd034d88c8227b361.jar" />
+    </item>
+    <item
+        jar="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.3.0_a5bf02a3795167f2f01d56cf572eeae2efddb54a.jar" />
+    </item>
+    <item
+        jar="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/pre-dexed/debug/internal_impl-23.3.0_7cfbce9d257be84f8d74a560f4d6c910691d0d98.jar" />
+    </item>
+    <item
+        jar="/Users/Xavi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/pre-dexed/debug/support-annotations-23.3.0_fcf5f1da7080f4cf42e431593b856f5c5a21e537.jar" />
+    </item>
+    <item
+        jar="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.3.0_478707055fed01bbeed06e511e8ca5f6497521be.jar" />
+    </item>
+    <item
+        jar="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.3.0_0fa46a65d3b6395673c2149757fa13f299077388.jar" />
+    </item>
+
+</items>

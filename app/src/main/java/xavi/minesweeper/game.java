@@ -47,17 +47,10 @@ public class Game extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_layout);
         Bundle bundle = getIntent().getExtras();
-       // int columns = bundle.getInt("num_Casillas");
-        //numCols = columns;
         dataBuilder = bundle.getParcelable(getString(R.string.extraData));
         assert dataBuilder != null;
         numCols = dataBuilder.getNumOfColumns();
-        //numCols = bundle.getInt("num_Casillas");
-        //boolean haveTimer = bundle.getBoolean("time");
-        //time = haveTimer;
         time = dataBuilder.getHasTime();
-        //time = bundle.getBoolean("time");
-        //String bundleStr = bundle.getString("percentage");
         String bundleStr = dataBuilder.getPercentage();
         if (bundleStr != null) {
             switch (bundleStr) {
@@ -82,7 +75,6 @@ public class Game extends FragmentActivity {
         TextView tv = (TextView)findViewById(R.id.numberOfMines);
         tv.setText(String.format(getString(R.string.numberofmines),numberOfMines));
         if(time){
-            //timeout = bundle.getInt("timevalue");
             timeout = dataBuilder.getSeconds();
             tm = (TextView)findViewById(R.id.timer);
             startTime = SystemClock.uptimeMillis();
@@ -150,12 +142,13 @@ public class Game extends FragmentActivity {
                 Intent data = new Intent();
                 data.setData(Uri.parse("TIMEOUT"));
                 String text = String.format(getString(R.string.sentenceWhenTimeout),numClosedBoxes(), numberOfMines);
-                //String text = getString(R.string.sentenceWhenTimeout) + numClosedBoxes() + numberOfMines;
-                //data.putExtra("TEXT",text);
                 dataBuilder.setText(text);
-                if(time) dataBuilder.setTranscurredTime(transcurred); //data.putExtra("TRANSCURRED",transcurred);
+                if(time) dataBuilder.setTranscurredTime(transcurred);
 
                 data.putExtra(getString(R.string.extraData),  dataBuilder);
+                TextView tv = (TextView)findViewById(R.id.gametitle);
+                tv.setText(R.string.titleENDtime);
+                tv.setTextColor(Color.RED);
                 setResult(RESULT_OK,data);
                 finish(); //LOSE BECAUSE TIMEOUT
             }else if(!finished){
@@ -214,16 +207,11 @@ public class Game extends FragmentActivity {
 
             if (convertView == null) {
                 btn = new Button(mContext);
-                //btn.setLayoutParams(new GridView.LayoutParams(GridView.LayoutParams.WRAP_CONTENT, GridView.LayoutParams.WRAP_CONTENT));
-               /* DisplayMetrics displaymetrics = new DisplayMetrics();
-                getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-                int width = displaymetrics.widthPixels;*/
                 View v = findViewById(R.id.idgrid);
                 int width = v.getWidth();
                 double density = (width - 10)/ (dataBuilder.getNumOfColumns()+1);
 
                 btn.setLayoutParams(new GridView.LayoutParams((int)(density), (int)(density)));
-               // btn.setPadding(8, 8, 8, 8);
                 btn.setFocusable(false);
                 btn.setClickable(false);
             } else {
@@ -238,16 +226,14 @@ public class Game extends FragmentActivity {
             } else if (filenames[position] == -2) {
                 btn.setId(position);
                 btn.setBackgroundResource(R.drawable.color_buttonpressed);
-                btn.setOnClickListener(new ClickedListener(position));
                 return btn;
             }else if(filenames[position] == -3) {
                 btn.setId(position);
-                btn.setBackgroundColor(Color.RED);
-                btn.setOnClickListener(new ClickedListener(position));
+                btn.setBackgroundResource(R.drawable.mine32);
                 return btn;
             }else if(filenames[position] == -10 || filenames[position] == -11){
                 btn.setId(position);
-                btn.setBackgroundColor(Color.CYAN);
+                btn.setBackgroundResource(R.drawable.flag32);
                 btn.setOnClickListener(new ClickedListener(position));
                 btn.setOnLongClickListener(new LongClickedListener(position));
                 return btn;
@@ -263,7 +249,6 @@ public class Game extends FragmentActivity {
                 }
                 btn.setId(position);
                 btn.setBackgroundResource(R.drawable.color_buttonpressed);
-                btn.setOnClickListener(new ClickedListener(position));
                 return btn;
             }
         }
@@ -291,19 +276,8 @@ public class Game extends FragmentActivity {
             else if(filenames[position] == -1) filenames[position] = -11; //flag over the bomb
             else if(filenames[position] == -11) filenames[position] = -1;
 
-            if(filenames[position] == -10 || filenames[position] == -11) { //values of a flag
-                Button btn = (Button) v;
-                btn.setBackgroundColor(Color.CYAN);
-                btn.setId(position);
-                return true;
-            }else{
-                Button btn = (Button) v;
-                btn.setBackgroundResource(R.drawable.color_buttons);
-                btn.setId(position);
-                btn.setFocusable(false);
-                btn.setClickable(false);
-            }
-            return false;
+            gridview.setAdapter(new ButtonAdapter(getApplicationContext()));
+            return true;
         }
     }
 
@@ -319,6 +293,7 @@ public class Game extends FragmentActivity {
                 firstClick = false;
                 filenames[position]=1;
                 setInitialBoombs(numCols*numCols);
+                filenames[position]=0;
                 algorithmForBox(position);
                 gridview.setAdapter(new ButtonAdapter(getApplicationContext()));
             }
@@ -329,11 +304,24 @@ public class Game extends FragmentActivity {
                 Intent data = new Intent();
                 data.setData(Uri.parse("BOOM"));
                 String text = String.format(getString(R.string.sentenceWhenLose), numClosedBoxes(), numberOfMines);
-                if(time) dataBuilder.setTranscurredTime(transcurred);// data.putExtra("TRANSCURRED",transcurred);
-                //data.putExtra("TEXT",text);
+                if(time) dataBuilder.setTranscurredTime(transcurred);
+                //See the bombs...
+                for (int i=0; i<numCols*numCols; i++){
+                    if (filenames[i]==-1 || filenames[i] == -11){
+                        filenames[i]=-3;
+                    }
+                    gridview.setAdapter(new ButtonAdapter(getApplicationContext()));
+                }
+                //End see the bombs..
                 dataBuilder.setText(text);
                 data.putExtra(getString(R.string.extraData),dataBuilder);
+
+                TextView tv = (TextView)findViewById(R.id.gametitle);
+                tv.setText(R.string.titleENDlose);
+                tv.setTextColor(Color.RED);
+
                 setResult(RESULT_OK,data);
+
                 finish(); //LOSE BECAUSE CLICKED BOMB
             }else if (filenames[position] == 0){ //first click in this button
                 algorithmForBox(position);
@@ -344,7 +332,6 @@ public class Game extends FragmentActivity {
                     data.setData(Uri.parse("WIN"));
                     String text;
                     if (time){
-                        //data.putExtra("TRANSCURRED",transcurred);
                         dataBuilder.setTranscurredTime(transcurred);
                         text = String.format(getString(R.string.sentenceWhenWinWithTimer),(timeout-transcurred));
                     }else{
@@ -353,6 +340,10 @@ public class Game extends FragmentActivity {
                     dataBuilder.setText(text);
                     //data.putExtra("TEXT",text);
                     data.putExtra(getString(R.string.extraData),dataBuilder);
+                    TextView tv = (TextView)findViewById(R.id.gametitle);
+                    tv.setText(R.string.titleENDwin);
+                    tv.setTextColor(Color.BLUE);
+
                     setResult(RESULT_OK,data);
                     finish(); //WIN
                 }
@@ -391,10 +382,10 @@ public class Game extends FragmentActivity {
         int bombs = 0;
         //Check Horizontally
         if(position>0 && (position)%numCols != 0){//Value not at the beginning
-            if(filenames[position-1] == -1 || filenames[position-1] == -3) bombs++;
+            if(filenames[position-1] == -1 || filenames[position-1] == -3 || filenames[position-1] == -11) bombs++;
         }
         if(position<(numCols*numCols)-1 && (position+1)%numCols != 0){ //Value not at end
-            if(filenames[position+1] == -1 || filenames[position+1] == -3) bombs++;
+            if(filenames[position+1] == -1 || filenames[position+1] == -3 || filenames[position+1] == -11) bombs++;
         }
         return bombs;
     }
@@ -404,12 +395,12 @@ public class Game extends FragmentActivity {
         //Check Vertically and Diagonal
         //UP
         if((position+numCols) < (numCols*numCols)){
-            if(filenames[position+numCols] == -1 || filenames[position+numCols] == -3) bombs++; //Vertically
+            if(filenames[position+numCols] == -1 || filenames[position+numCols] == -3 || filenames[position+numCols] == -11) bombs++; //Vertically
             bombs = bombs + checkHorizontally(position+numCols); //Diagonal
         }
         //DOWN
         if((position-numCols) >= 0){
-            if(filenames[position-numCols] == -1 || filenames[position-numCols] == -3) bombs++; //Vertically
+            if(filenames[position-numCols] == -1 || filenames[position-numCols] == -3 || filenames[position-numCols] == -11) bombs++; //Vertically
             bombs = bombs + checkHorizontally(position-numCols); //Diagonal
         }
         return bombs;
@@ -422,20 +413,20 @@ public class Game extends FragmentActivity {
 
     private void expandHorizontal(int position){
         if(position>0 && (position)%numCols != 0) {//Value not at the beginning
-            if(filenames[position-1] == 0)algorithmForBox(position-1);
+            if(filenames[position-1] == 0 || filenames[position-1] == 10)algorithmForBox(position-1);
         }
         if(position<(numCols*numCols)-1 && (position+1)%numCols != 0) { //Value not at end
-            if(filenames[position+1] == 0) algorithmForBox(position+1);
+            if(filenames[position+1] == 0 || filenames[position+1] == 10) algorithmForBox(position+1);
         }
     }
 
     private void expandVertical(int position) {
         if ((position + numCols) < (numCols * numCols)) {
-            if(filenames[position+numCols] == 0) algorithmForBox(position + numCols);
+            if(filenames[position+numCols] == 0 || filenames[position+numCols] == 10) algorithmForBox(position + numCols);
             expandHorizontal(position + numCols);
         }
         if ((position - numCols) >= 0) {
-            if(filenames[position-numCols] == 0) algorithmForBox(position - numCols);
+            if(filenames[position-numCols] == 0 || filenames[position-numCols] == 10) algorithmForBox(position - numCols);
             expandHorizontal(position - numCols);
         }
     }

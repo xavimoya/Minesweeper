@@ -83,6 +83,11 @@ public class Config extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if(requestCode == 123){
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             if(resultCode == RESULT_OK){
                 String result = data.getData().toString();
                 Intent res = new Intent(this,Results.class);

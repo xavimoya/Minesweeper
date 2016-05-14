@@ -33,6 +33,9 @@
     <string name="time_checkbox">Time (seconds)</string>
     <string name="time_control">Timeout</string>
     <string name="timerName">Time:</string>
+    <string name="titleENDlose">YOU LOSE... BOOM</string>
+    <string name="titleENDtime">YOU LOSE... TIMEOUT</string>
+    <string name="titleENDwin">YOU WIN!!</string>
     <string name="title_config">CONFIGURATION</string>
     <string name="title_game">GAME</string>
     <string name="title_help">HELP</string>

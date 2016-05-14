@@ -43,5 +43,8 @@ Se puede poner una marca en las casillas que el jugador piensa que hay minas par
     <string name="str_seconds">segundos.</string>
     <string name="textErrorColumn">Numero incorrecto de columnas (de 2 a 10)</string>
     <string name="extraData" translatable="false">dataBuilder</string>
+    <string name="titleENDtime">PERDISTE... TIEMPO AGOTADO</string>
+    <string name="titleENDlose">PERDISTE... BOOM!</string>
+    <string name="titleENDwin">GANASTE!!</string>
 
 </resources>
