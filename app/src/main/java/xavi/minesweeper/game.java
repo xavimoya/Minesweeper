@@ -229,11 +229,11 @@ public class Game extends FragmentActivity {
                 return btn;
             }else if(filenames[position] == -3) {
                 btn.setId(position);
-                btn.setBackgroundResource(R.drawable.mine32);
+                btn.setBackgroundResource(R.drawable.mine64);
                 return btn;
             }else if(filenames[position] == -10 || filenames[position] == -11){
                 btn.setId(position);
-                btn.setBackgroundResource(R.drawable.flag32);
+                btn.setBackgroundResource(R.drawable.flag64);
                 btn.setOnClickListener(new ClickedListener(position));
                 btn.setOnLongClickListener(new LongClickedListener(position));
                 return btn;
