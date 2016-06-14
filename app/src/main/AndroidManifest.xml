@@ -24,7 +24,8 @@
         <activity android:name=".Config" />
         <activity android:name=".Results" />
         <activity android:name=".Log" />
-        <activity android:name=".Frag_name"></activity>
+        <activity android:name=".Frag_name" />
+        <activity android:name=".DisplayBBDD"></activity>
     </application>
 
 </manifest>

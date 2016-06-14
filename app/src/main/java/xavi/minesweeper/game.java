@@ -1,16 +1,13 @@
 package xavi.minesweeper;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.os.SystemClock;
-import android.support.v4.app.FragmentActivity;
-import android.util.DisplayMetrics;
-import android.view.LayoutInflater;
+import android.support.annotation.IntegerRes;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -24,7 +21,7 @@ import android.widget.TextView;
  * Created by xavi on 25/4/16.
  *
  */
-public class Game extends FragmentActivity {
+public class Game extends AppCompatActivity {
     //Toast toast;
     GridView gridview;
     int[] filenames;
@@ -289,15 +286,23 @@ public class Game extends FragmentActivity {
         }
         @Override
         public void onClick(View v) {
+            boolean frags = false;
+            Log frag = (Log) getSupportFragmentManager().findFragmentById(R.id.frag_log);
+            if (frag != null && frag.isInLayout()){
+                frags = true;
+            }
+
             if (firstClick){
                 firstClick = false;
                 filenames[position]=1;
                 setInitialBoombs(numCols*numCols);
                 filenames[position]=0;
                 algorithmForBox(position);
+                if (frags) frag.printDataInLayout("You touch the first button: \n  " + "row/col" + getCellInPos(position));
                 gridview.setAdapter(new ButtonAdapter(getApplicationContext()));
             }
             if(filenames[position]==-1 && !finished){ //BOOM
+                if (frags) frag.printDataInLayout("You touch a BOMB! \n  " + "row/col" + getCellInPos(position));
                 filenames[position]=-3;
                 finished = true;
                 gridview.setAdapter(new ButtonAdapter(getApplicationContext()));
@@ -324,6 +329,8 @@ public class Game extends FragmentActivity {
 
                 finish(); //LOSE BECAUSE CLICKED BOMB
             }else if (filenames[position] == 0){ //first click in this button
+
+                if (frags) frag.printDataInLayout("You touch the button: \n  " + "row/col" + getCellInPos(position));
                 algorithmForBox(position);
                 gridview.setAdapter(new ButtonAdapter(getApplicationContext()));
                 if(win() && !finished){
@@ -352,13 +359,13 @@ public class Game extends FragmentActivity {
         }
     }
 
-  /*  private void showToast(String text) {
-        if (toast != null) {
-            toast.cancel();
-        }
-        toast = Toast.makeText(this, text, Toast.LENGTH_LONG);
-        toast.show();
-    }
+          /*  private void showToast(String text) {
+                if (toast != null) {
+                    toast.cancel();
+                }
+                toast = Toast.makeText(this, text, Toast.LENGTH_LONG);
+                toast.show();
+            }
 */
     private void algorithmForBox(int position){
         int bombs = getAdjacencyBombs(position);
@@ -429,6 +436,22 @@ public class Game extends FragmentActivity {
             if(filenames[position-numCols] == 0 || filenames[position-numCols] == 10) algorithmForBox(position - numCols);
             expandHorizontal(position - numCols);
         }
+    }
+
+    private String getCellInPos(int position){
+        String col = "";
+        int row = 0;
+        boolean isfinish = false;
+        while (!isfinish){
+            row ++;
+            if (position/numCols < 0 ){
+                col = Integer.toString(position) + 1 ;
+                isfinish = true;
+            }else{
+                position = position - numCols;
+            }
+        }
+        return "("+ row + "," +col+")";
     }
 
 }

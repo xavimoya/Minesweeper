@@ -42,4 +42,5 @@
     <string name="titleENDlose">YOU LOSE... BOOM</string>
     <string name="titleENDtime">YOU LOSE... TIMEOUT</string>
     <string name="titleENDwin">YOU WIN!!</string>
+    <string name="bt_query">Query DB</string>
 </resources>

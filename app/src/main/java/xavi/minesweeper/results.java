@@ -1,11 +1,16 @@
 package xavi.minesweeper;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.*;
 import android.os.Process;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import static java.util.Calendar.*;
@@ -17,6 +22,9 @@ public class Results extends Activity {
     String totaltext;
     String subject;
     DataBuilder dataBuilder;
+    Toast toast;
+    String dbname = getResources().getString(R.string.name_db);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +36,7 @@ public class Results extends Activity {
         int columns = bundle.getInt("COLS");
         String text = bundle.getString("TEXT");*/
         dataBuilder = bundle.getParcelable(getString(R.string.extraData));
+        saveTheResult(dataBuilder);
         String alias = dataBuilder.getAlias();
         String percent = dataBuilder.getPercentage();
         boolean haveTime = dataBuilder.getHasTime();
@@ -71,5 +80,30 @@ public class Results extends Activity {
         finish();
     }
 
+    private void saveTheResult(DataBuilder data){
+        DataBase db = null;
+        db =  db.getInstance(this.getApplicationContext());
+        SQLiteDatabase sqldb = db.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("alias",data.getAlias());
+        cv.put("nColumns",data.getNumOfColumns());
+        cv.put("hasTime",data.getHasTime());
+        cv.put("seconds",data.getSeconds());
+        cv.put("transcurredTime",data.getTranscurredTime());
+        cv.put("percentage",data.getPercentage());
+        cv.put("result",data.getText());
+        long i = sqldb.insert(dbname,null,cv);
+        if (i==-1)//error
+            showToast("An error has occurred");
+        else
+            showToast("Insert a row with ID: "+i);
+    }
 
+    private void showToast(String text) {
+        if (toast != null) {
+            toast.cancel();
+        }
+        toast = Toast.makeText(this, text, Toast.LENGTH_LONG);
+        toast.show();
+    }
 }

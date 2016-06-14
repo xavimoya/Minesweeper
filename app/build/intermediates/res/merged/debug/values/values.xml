@@ -215,6 +215,7 @@
     <string name="app_name">BuscaMinas</string>
     <string name="bt_exit">Salir</string>
     <string name="bt_help">Ayuda</string>
+    <string name="bt_query">Consultar BD</string>
     <string name="bt_start">Empezar a jugar</string>
     <string name="bt_startgame">Empezar</string>
     <string name="extraData" translatable="false">dataBuilder</string>
@@ -223,6 +224,7 @@ Algunas casillas tienen un número, este número indica las minas que suman toda
 Si se descubre una casilla con una mina se pierde la partida.
 Se puede poner una marca en las casillas que el jugador piensa que hay minas para ayudar a descubrir la que están cerca.</string>
     <string name="help_return">Volver al menú</string>
+    <string name="name_db" translatable="false">ResultsData</string>
     <string name="numberofmines">Numero de minas: %d </string>
     <string name="parrilla">Tamaño de parrilla</string>
     <string name="result_Log">Valores del Log</string>

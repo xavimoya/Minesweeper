@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml:2:1-30:12
+ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml:2:1-31:12
 	package
 		ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml:3:5-31
 		INJECTED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml
@@ -22,7 +22,7 @@ ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidMan
 	android:name
 		ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml:6:22-64
 application
-ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml:8:5-28:19
+ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml:8:5-29:19
 MERGED from [com.android.support:appcompat-v7:23.3.0] /Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
 MERGED from [com.android.support:support-v4:23.3.0] /Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
@@ -75,9 +75,13 @@ ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidMan
 	android:name
 		ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml:26:19-38
 activity#xavi.minesweeper.Frag_name
-ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml:27:9-56
+ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml:27:9-47
 	android:name
 		ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml:27:19-44
+activity#xavi.minesweeper.DisplayBBDD
+ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml:28:9-58
+	android:name
+		ADDED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml:28:19-46
 uses-sdk
 INJECTED from /Users/Xavi/AndroidStudioProjects/Minesweeper/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.3.0] /Users/Xavi/AndroidStudioProjects/Minesweeper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:21:5-23:78

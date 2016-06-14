@@ -56,4 +56,10 @@ public class Minessweeper_main extends ActionBarActivity {
         finish();
     }
 
+    public void clickQuery(View v ){
+        Intent i = new Intent(this,DisplayBBDD.class);
+        i.addFlags(i.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+    }
+
 }

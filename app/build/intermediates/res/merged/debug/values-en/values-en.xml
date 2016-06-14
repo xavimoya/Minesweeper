@@ -5,6 +5,7 @@
     <string name="app_name">Minesweeper</string>
     <string name="bt_exit">Exit</string>
     <string name="bt_help">Help</string>
+    <string name="bt_query">Query DB</string>
     <string name="bt_start">Start Game</string>
     <string name="bt_startgame">Start</string>
     <string name="help_instr">The game is to clear all the boxes on a screen that does not hide a mine. Some boxes have a number, this number indicates the mines totaling all the surrounding squares. Thus, if a box has the number 3 means that there are eight boxes around (if not on a corner or edge) mines are 3 to 5 without mines. If you discover a numbered box indicates that none of the neighboring squares has mine and these are automatically discovered. If a box with a mine is discovered the game is lost. You can put a mark on the boxes that the player thinks that there are mines to help discover which are nearby.</string>
