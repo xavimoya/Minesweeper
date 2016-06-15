@@ -47,6 +47,7 @@ Se puede poner una marca en las casillas que el jugador piensa que hay minas par
     <string name="titleENDlose">PERDISTE... BOOM!</string>
     <string name="titleENDwin">GANASTE!!</string>
     <string name="name_db" translatable="false">ResultsData</string>
+    <string name="name_tabledb" translatable="false">DataGame</string>
     <string name="bt_query">Consultar BD</string>
 
 </resources>

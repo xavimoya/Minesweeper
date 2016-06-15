@@ -108,6 +108,7 @@ public class Game extends AppCompatActivity {
         savedInstanceState.putLong("TIME_SWAP",timeSwapBuff);
         savedInstanceState.putLong("TIMESTART",startTime);
         savedInstanceState.putIntArray("FILENAMES",filenames);
+        savedInstanceState.putBoolean("clicked",firstClick);
     }
 
     @Override
@@ -116,6 +117,7 @@ public class Game extends AppCompatActivity {
         timeSwapBuff = savedInstanceState.getLong("TIME_SWAP");
         startTime = savedInstanceState.getLong("TIMESTART");
         filenames = savedInstanceState.getIntArray("FILENAMES");
+        firstClick = savedInstanceState.getBoolean("clicked");
     }
 
 
@@ -274,8 +276,43 @@ public class Game extends AppCompatActivity {
             else if(filenames[position] == -11) filenames[position] = -1;
 
             gridview.setAdapter(new ButtonAdapter(getApplicationContext()));
+
+            if(checkFLagsTowin() && !finished){
+                finished = true;
+                Intent data = new Intent();
+                data.setData(Uri.parse("WIN"));
+                String text;
+                if (time){
+                    dataBuilder.setTranscurredTime(transcurred);
+                    text = String.format(getString(R.string.sentenceWhenWinWithTimer),(timeout-transcurred));
+                }else{
+                    text = getString(R.string.sentenceWhenWinWithOUTTimer);
+                }
+                dataBuilder.setText(text);
+                //data.putExtra("TEXT",text);
+                data.putExtra(getString(R.string.extraData),dataBuilder);
+                TextView tv = (TextView)findViewById(R.id.gametitle);
+                tv.setText(R.string.titleENDwin);
+                tv.setTextColor(Color.BLUE);
+
+                setResult(RESULT_OK,data);
+                finish(); //WIN
+
+            }
+
             return true;
         }
+    }
+
+    private boolean checkFLagsTowin(){
+        int count = 0;
+        int count2 = 0;
+        for(int i : filenames){
+            if (i == -11) count ++;
+            if (i == -10) count ++;
+        }
+        if(count==numberOfMines && count2 == 0) return true;
+        else return false;
     }
 
     public class ClickedListener implements View.OnClickListener {

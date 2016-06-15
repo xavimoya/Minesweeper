@@ -3,26 +3,21 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <fragment class="xavi.minesweeper.Game"
             android:id="@+id/frag_game1"
             android:layout_width="match_parent"
             android:layout_height="600sp"
-            tools:layout="@layout/game_layout">
+            >
         </fragment>
 
         <fragment class="xavi.minesweeper.Log"
             android:id="@+id/frag_log"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/activity_log">
+            >
         </fragment>
 
 
 
-    </LinearLayout>
 </LinearLayout>

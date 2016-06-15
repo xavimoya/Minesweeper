@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="percentage">
+        <item>15%</item>
+        <item>25%</item>
+        <item>35%</item>
+    </string-array>
+    <string-array name="values">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+
+    </string-array>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
@@ -225,6 +242,7 @@ Si se descubre una casilla con una mina se pierde la partida.
 Se puede poner una marca en las casillas que el jugador piensa que hay minas para ayudar a descubrir la que están cerca.</string>
     <string name="help_return">Volver al menú</string>
     <string name="name_db" translatable="false">ResultsData</string>
+    <string name="name_tabledb" translatable="false">DataGame</string>
     <string name="numberofmines">Numero de minas: %d </string>
     <string name="parrilla">Tamaño de parrilla</string>
     <string name="result_Log">Valores del Log</string>

@@ -1,0 +1,45 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Datos de juego">
+
+        <EditTextPreference
+            android:id="@+id/spAlias"
+            android:key="op1"
+            android:title="Alias"
+            android:summary="The name of player"
+            android:dialogTitle="Enter your name"
+            android:defaultValue="Player1"
+            />
+        <ListPreference
+            android:key="op2"
+            android:title="Nº Cells"
+            android:summary="Number of cells"
+            android:defaultValue="5"
+            android:entryValues="@array/values"
+            />
+        <SwitchPreference
+            android:key="op3"
+            android:title="Time On/Off"
+            android:summary="Enable or Disable the time counter"
+        />
+        <EditTextPreference
+            android:key="op3.1"
+            android:title="Seconds"
+            android:summary="Time to finish the game"
+            android:defaultValue="60"
+            android:dialogTitle="Enter the number of seconds"
+            />
+        <ListPreference
+            android:key="op3"
+            android:title="% Mines"
+            android:summary="Percentage of mines"
+            android:entryValues="@array/percentage"
+            android:defaultValue="25%"
+            />
+
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

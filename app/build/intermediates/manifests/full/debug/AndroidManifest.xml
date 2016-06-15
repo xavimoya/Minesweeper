@@ -30,8 +30,9 @@
         <activity android:name="xavi.minesweeper.Config" />
         <activity android:name="xavi.minesweeper.Results" />
         <activity android:name="xavi.minesweeper.Log" />
-        <activity android:name="xavi.minesweeper.Frag_name" />
+        <activity android:name="xavi.minesweeper.Frag_game" />
         <activity android:name="xavi.minesweeper.DisplayBBDD" />
+        <activity android:name="xavi.minesweeper.MySharedPreferences" />
     </application>
 
 </manifest>

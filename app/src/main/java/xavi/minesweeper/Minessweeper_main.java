@@ -1,11 +1,13 @@
 package xavi.minesweeper;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class Minessweeper_main extends ActionBarActivity {
@@ -57,9 +59,12 @@ public class Minessweeper_main extends ActionBarActivity {
     }
 
     public void clickQuery(View v ){
-        Intent i = new Intent(this,DisplayBBDD.class);
-        i.addFlags(i.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(i);
+        Toast.makeText(this,"Query DB not implemented yet.",Toast.LENGTH_SHORT).show();
+        /*
+            Intent i = new Intent(this,DisplayBBDD.class);
+            i.addFlags(i.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+        */
     }
 
 }

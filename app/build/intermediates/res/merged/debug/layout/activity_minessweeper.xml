@@ -73,6 +73,7 @@
             android:layout_alignStart="@+id/button2"
             />
         <Button
+            android:layout_marginTop="5sp"
             style="?android:attr/buttonStyleSmall"
             android:textColor="#fff"
             android:layout_width="wrap_content"

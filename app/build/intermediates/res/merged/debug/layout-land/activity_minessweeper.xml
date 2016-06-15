@@ -77,7 +77,9 @@
                 android:layout_alignEnd="@+id/button2"
                 android:layout_alignLeft="@+id/button2"
                 android:layout_alignStart="@+id/button2"
-                />            <Button
+                />
+            <Button
+                android:layout_marginTop="5sp"
                 style="?android:attr/buttonStyleSmall"
                 android:textColor="#fff"
                 android:layout_width="wrap_content"

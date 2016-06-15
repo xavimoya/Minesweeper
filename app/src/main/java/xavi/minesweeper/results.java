@@ -23,7 +23,6 @@ public class Results extends Activity {
     String subject;
     DataBuilder dataBuilder;
     Toast toast;
-    String dbname = getResources().getString(R.string.name_db);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,7 @@ public class Results extends Activity {
         int columns = bundle.getInt("COLS");
         String text = bundle.getString("TEXT");*/
         dataBuilder = bundle.getParcelable(getString(R.string.extraData));
-        saveTheResult(dataBuilder);
+       // saveTheResult(dataBuilder);
         String alias = dataBuilder.getAlias();
         String percent = dataBuilder.getPercentage();
         boolean haveTime = dataBuilder.getHasTime();
@@ -81,20 +80,19 @@ public class Results extends Activity {
     }
 
     private void saveTheResult(DataBuilder data){
-        DataBase db = null;
-        db =  db.getInstance(this.getApplicationContext());
+        DataBase db = DataBase.getInstance(this);
         SQLiteDatabase sqldb = db.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("alias",data.getAlias());
         cv.put("nColumns",data.getNumOfColumns());
         cv.put("hasTime",data.getHasTime());
         cv.put("seconds",data.getSeconds());
-        cv.put("transcurredTime",data.getTranscurredTime());
+        cv.put("totalTime",data.getTranscurredTime());
         cv.put("percentage",data.getPercentage());
         cv.put("result",data.getText());
-        long i = sqldb.insert(dbname,null,cv);
-        if (i==-1)//error
-            showToast("An error has occurred");
+        long i = sqldb.insert(getString(R.string.name_tabledb),null,cv);
+        if (i==-1)//insert error
+            showToast("Error inserting row");
         else
             showToast("Insert a row with ID: "+i);
     }
